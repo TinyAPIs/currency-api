@@ -1,0 +1,19 @@
+{
+  "name": "currency-api",
+  "version": "1.0.0",
+  "description": "Currency Conversion API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "currency",
+    "API",
+    "conversion"
+  ],
+  "author": "Shashank Jha",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

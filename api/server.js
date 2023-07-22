@@ -83,6 +83,8 @@ app.get('/:date/:from_currency', (req, res) => {
 });
 
 // Export the server middleware
-module.exports = {
-    server: app,
-};
+// module.exports = {
+//     server: app,
+// };
+module.exports = app;
+

@@ -1,5 +1,5 @@
 {
-  "version": 2,
-  "name": "currency-api",
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }]
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/server.js" }
+  ]
 }

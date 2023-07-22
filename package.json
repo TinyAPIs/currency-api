@@ -14,6 +14,7 @@
   "author": "Shashank Jha",
   "license": "MIT",
   "dependencies": {
+    "@vercel/node": "^2.15.6",
     "apicache": "^1.6.3",
     "express": "^4.18.2",
     "express-rate-limit": "^6.8.0",

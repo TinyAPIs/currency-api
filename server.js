@@ -31,8 +31,19 @@ app.use(cache('5 minutes'));
 app.use(helmet());
 
 app.get('/', (req, res) => {
-    res.send('Hello, world!');
+    res.json({
+        message: 'Welcome to the Currency API! Use this API to get exchange rates between different currencies.',
+        usage: {
+            single_currency: 'https://currency-api.tinyapi.co/api/{date}/{from_currency}/',
+            currency_conversion: 'https://currency-api.tinyapi.co/api/{date}/{from_currency}/{to_currency}/'
+        },
+        example: {
+            single_currency: 'https://currency-api.tinyapi.co/api/2023-07-22/aed/',
+            currency_conversion: 'https://currency-api.tinyapi.co/api/2023-07-22/aed/inr/'
+        }
+    });
 });
+
 
 app.get('/:date/:from_currency/:to_currency', (req, res) => {
     const { date, from_currency, to_currency } = req.params;

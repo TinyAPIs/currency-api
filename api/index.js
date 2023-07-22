@@ -1,2 +1,4 @@
 const app = require('../server'); // adjust the path as needed
-module.exports = app;
+const { createServer } = require('@vercel/node-server');
+const server = createServer(app);
+module.exports = server;

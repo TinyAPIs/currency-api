@@ -4,7 +4,8 @@
   "description": "Currency Conversion API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "vercel-build": "node server.js"
   },
   "keywords": [
     "currency",

@@ -1,23 +1,37 @@
-# Currency Conversion API
+# Currency API
 
-This repository hosts the code for the Currency Conversion API, which is available through [TinyAPI](https://www.tinyapi.co/). TinyAPI is a platform that provides various APIs for different purposes, and the Currency Conversion API is one of them. You can find more details about this API [here](https://www.tinyapi.co/service/currency-conversion-api).
+This repository hosts the open-source version of the [Currency Conversion API](https://www.tinyapi.co/service/currency-conversion-api) provided by [TinyAPI](https://www.tinyapi.co/). The API provides daily exchange rates for a variety of currencies.
+
+## Why This Repository?
+
+The original repository contains a vast amount of data, with each currency having its own directory and multiple JSON files for different dates. This structure, while comprehensive, can be challenging to navigate and use.
+
+In this repository, we have restructured the data to make it more accessible and user-friendly. We have consolidated the exchange rates for each currency into a single JSON file per date, making it easier to fetch the data for a specific date.
+
+## Accessing the Data via API
+
+You can access the data via the following endpoints:
+
+- `/date(YYYY-MM-DD)/from_currency/to_currency/`: This endpoint returns the exchange rate from one currency to another for a specific date. If no date is provided, it returns the rate for the current date.
+
+- `/date(YYYY-MM-DD)/from_currency/`: This endpoint returns the exchange rates from one currency to all other currencies for a specific date. If no date is provided, it returns the rates for the current date.
+
+## Rate Limits and Caching
+
+To prevent abuse and ensure fair usage, we have implemented rate limiting and caching on our API. Each IP address is limited to 100 requests every 15 minutes. We also use caching to improve response times and reduce server load. The data is cached for 5 minutes, so subsequent requests for the same data within this period will be served faster.
+
+## Paid Version
+
+For commercial use cases or if you need higher limits, a paid version of this API is available via [TinyAPI](https://www.tinyapi.co/service/currency-conversion-api). The paid version offers higher rate limits and priority support.
 
 ## Acknowledgements
 
 This repository is inspired by the work of [fawazahmed0](https://github.com/fawazahmed0) and his [currency-api](https://github.com/fawazahmed0/currency-api) project. We would like to express our gratitude for his contribution to the open-source community.
 
-## Why This Repository?
-
-We created this repository to provide a streamlined and efficient version of the currency conversion API. Our goal is to make it easier for developers to integrate currency conversion functionality into their applications. We have cleaned up the directory structure for better readability and added a cron job to fetch daily exchange rates.
-
-## Using the Hosted API
-
-If you're looking for a hosted version of this API, you can sign up for TinyAPI and use the Currency Conversion API service. This will save you the trouble of hosting and maintaining the API yourself.
-
 ## Contributing
 
-We welcome contributions from the community. If you have any suggestions or improvements, feel free to create an issue or submit a pull request.
+We welcome contributions to this project. Please feel free to submit a pull request or open an issue if you find any bugs or have any suggestions for improvements.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

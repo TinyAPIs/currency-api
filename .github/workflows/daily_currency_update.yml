@@ -1,0 +1,24 @@
+name: Update Currency Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Install Dependencies
+        run: npm install axios
+      - name: Run Script
+        run: node scripts/updateCurrencyData.js
+        env:
+          BASE_URL: https://raw.githubusercontent.com/fawazahmed0/currency-api/1/
+          BASE_DEST_PATH: ./data/

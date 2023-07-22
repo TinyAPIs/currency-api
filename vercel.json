@@ -1,6 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/api/:date/:from_currency", "destination": "/api/[date]/[from_currency]" },
-    { "source": "/api/:date/:from_currency/:to_currency", "destination": "/api/[date]/[from_currency]/[to_currency]" }
-  ]
-}

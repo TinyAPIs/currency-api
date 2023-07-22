@@ -24,11 +24,17 @@ Please refer to the [currencies.json](https://github.com/TinyAPIs/currency-api/b
 
 ## Accessing the Data via API
 
-You can access the data via the following endpoints:
+You can access the data via the following endpoint:
 
-- `/date(YYYY-MM-DD)/from_currency/to_currency/`: This endpoint returns the exchange rate from one currency to another for a specific date. If no date is provided, it returns the rate for the current date.
+`https://currency-api.tinyapi.co/api?date={YYYY-MM-DD}&from_currency={from_currency}&to_currency={to_currency}`
 
-- `/date(YYYY-MM-DD)/from_currency/`: This endpoint returns the exchange rates from one currency to all other currencies for a specific date. If no date is provided, it returns the rates for the current date.
+This endpoint returns the exchange rate from one currency to another for a specific date. If no date is provided, it returns the rate for the current date.
+
+For example:
+
+- To get the exchange rate from AED to INR for the date 2023-07-22, use the following URL: [https://currency-api.tinyapi.co/api?date=2023-07-22&from_currency=aed&to_currency=inr](https://currency-api.tinyapi.co/api?date=2023-07-22&from_currency=aed&to_currency=inr)
+
+Please refer to the `currencies.json` file for the complete list of supported currencies.
 
 ## Rate Limits and Caching
 

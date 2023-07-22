@@ -1,6 +1,7 @@
 # IDE/Editor folders
 .idea
 .vscode
+.next
 
 # Node.js dependencies
 node_modules

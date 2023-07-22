@@ -7,7 +7,6 @@ const apicache = require('apicache');
 const helmet = require('helmet');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Apply rate limiting
 const limiter = rateLimit({
@@ -34,16 +33,15 @@ app.get('/', (req, res) => {
     res.json({
         message: 'Welcome to the Currency API! Use this API to get exchange rates between different currencies.',
         usage: {
-            single_currency: 'https://currency-api.tinyapi.co/api/{date}/{from_currency}/',
-            currency_conversion: 'https://currency-api.tinyapi.co/api/{date}/{from_currency}/{to_currency}/'
+            single_currency: '/api/{date}/{from_currency}/',
+            currency_conversion: '/api/{date}/{from_currency}/{to_currency}/'
         },
         example: {
-            single_currency: 'https://currency-api.tinyapi.co/api/2023-07-22/aed/',
-            currency_conversion: 'https://currency-api.tinyapi.co/api/2023-07-22/aed/inr/'
+            single_currency: '/api/2023-07-22/aed/',
+            currency_conversion: '/api/2023-07-22/aed/inr/'
         }
     });
 });
-
 
 app.get('/:date/:from_currency/:to_currency', (req, res) => {
     const { date, from_currency, to_currency } = req.params;
@@ -84,6 +82,7 @@ app.get('/:date/:from_currency', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-});
+// Export the server middleware
+module.exports = {
+    server: app,
+};

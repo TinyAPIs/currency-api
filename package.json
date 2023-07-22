@@ -2,9 +2,8 @@
   "name": "currency-api",
   "version": "1.0.0",
   "description": "Currency Conversion API",
-  "main": "api/server.js",
+  "main": "api/api.js",
   "scripts": {
-    "start": "node api/server.js"
   },
   "keywords": [
     "currency",

@@ -2,7 +2,7 @@
   "name": "currency-api",
   "version": "1.0.0",
   "description": "Currency Conversion API",
-  "main": "api/api.js",
+  "main": "api/index.js",
   "scripts": {
   },
   "keywords": [

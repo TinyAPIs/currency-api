@@ -2,11 +2,25 @@
 
 This repository hosts the open-source version of the [Currency Conversion API](https://www.tinyapi.co/service/currency-conversion-api) provided by [TinyAPI](https://www.tinyapi.co/). The API provides daily exchange rates for a variety of currencies.
 
-## Why This Repository?
+## Supported Currencies
 
-The original repository contains a vast amount of data, with each currency having its own directory and multiple JSON files for different dates. This structure, while comprehensive, can be challenging to navigate and use.
+We support a wide range of both fiat and cryptocurrency. Here's a list of all supported currencies:
 
-In this repository, we have restructured the data to make it more accessible and user-friendly. We have consolidated the exchange rates for each currency into a single JSON file per date, making it easier to fetch the data for a specific date.
+### Fiat Currencies
+
+- United States Dollar (USD)
+- Euro (EUR)
+- Japanese Yen (JPY)
+- British Pound (GBP)
+- Australian Dollar (AUD)
+- Canadian Dollar (CAD)
+- Swiss Franc (CHF)
+- Chinese Yuan (CNY)
+- Swedish Krona (SEK)
+- New Zealand Dollar (NZD)
+- ... and [40 more](https://github.com/TinyAPIs/currency-api/blob/main/data/currencies.json)
+
+Please refer to the [currencies.json](https://github.com/TinyAPIs/currency-api/blob/main/data/currencies.json) file for the complete list of supported currencies.
 
 ## Accessing the Data via API
 
@@ -27,6 +41,12 @@ For commercial use cases or if you need higher limits, a paid version of this AP
 ## Acknowledgements
 
 This repository is inspired by the work of [fawazahmed0](https://github.com/fawazahmed0) and his [currency-api](https://github.com/fawazahmed0/currency-api) project. We would like to express our gratitude for his contribution to the open-source community.
+
+### Why This Repository?
+
+The original repository contains a vast amount of data, with each currency having its own directory and multiple JSON files for different dates. This structure, while comprehensive, can be challenging to navigate and use.
+
+In this repository, we have restructured the data to make it more accessible and user-friendly. We have consolidated the exchange rates for each currency into a single JSON file per date, making it easier to fetch the data for a specific date.
 
 ## Contributing
 

@@ -21,4 +21,13 @@ jobs:
         run: node scripts/updateCurrencyData.js
         env:
           BASE_URL: https://raw.githubusercontent.com/fawazahmed0/currency-api/1/
-          BASE_DEST_PATH: ./data/
+          BASE_DEST_PATH: ./public/data/
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Commit and push changes
+        run: |
+          git add -A
+          git commit -m "Update currency data"
+          git push

@@ -6,10 +6,10 @@ const path = require('path');
 const base_url = process.env.BASE_URL;
 
 // Base path to the destination directory in your local repository
-const base_dest_path = process.env.BASE_DEST_PATH;
+const base_dest_path = path.join(__dirname, '../public/data/');
 
 // List of selected currencies
-const selected_currencies = require('data/currencies.json');
+const selected_currencies = require('../public/data/currencies.json');
 
 async function fetch_data(date, currency, other_currency) {
     // URL of the JSON file in the source repository
@@ -38,7 +38,7 @@ async function updateCurrencyData() {
 
     for (const currency of selected_currencies) {
         // Path to the destination file in your local repository
-        const dest_path = `${base_dest_path}${date.replace("-", "/")}/currencies/${currency}.json`;
+        const dest_path = path.join(base_dest_path, date.replace(/-/g, "/"), 'currencies', `${currency}.json`);
 
         // Check if the data for this date already exists in your local repository
         if (fs.existsSync(dest_path)) {

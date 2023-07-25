@@ -44,10 +44,6 @@ export default function Home() {
                     Use this API to get exchange rates between different currencies.
                 </p>
 
-                <p className={styles.description}>
-                    Get the latest exchange rates
-                </p>
-
                 <div className={styles.formContainer}>
                     <form onSubmit={handleSubmit} className={styles.form}>
                         <input

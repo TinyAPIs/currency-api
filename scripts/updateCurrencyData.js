@@ -9,7 +9,7 @@ const base_url = process.env.BASE_URL;
 const base_dest_path = path.join(__dirname, '../public/data/');
 
 // List of selected currencies
-const selected_currencies = require('../public/data/currencies.json');
+const selected_currencies = require('public/data/currencies.json');
 
 async function fetch_data(date, currency, other_currency) {
     // URL of the JSON file in the source repository

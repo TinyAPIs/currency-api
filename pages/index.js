@@ -48,28 +48,47 @@ export default function Home() {
                     Get the latest exchange rates
                 </p>
 
-                <div className={styles.grid}>
-                    <form onSubmit={handleSubmit} className={styles.card}>
-                        <h2>Convert Currency</h2>
-                        <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required />
-                        <input type="text" placeholder="From Currency" value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)} required />
-                        <input type="text" placeholder="To Currency" value={toCurrency} onChange={(e) => setToCurrency(e.target.value)} required />
+                <div className={styles.formContainer}>
+                    <form onSubmit={handleSubmit} className={styles.form}>
+                        <input
+                            type="date"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="From Currency"
+                            value={fromCurrency}
+                            onChange={(e) => setFromCurrency(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="text"
+                            placeholder="To Currency"
+                            value={toCurrency}
+                            onChange={(e) => setToCurrency(e.target.value)}
+                            required
+                        />
                         <button type="submit">Submit</button>
-
-                        {result && (
-                            <div>
-                                <h3>Result:</h3>
-                                <pre>{JSON.stringify(result, null, 2)}</pre>
-                            </div>
-                        )}
-
-                        {error && (
-                            <div>
-                                <h3>Error:</h3>
-                                <p>{error}</p>
-                            </div>
-                        )}
                     </form>
+
+                    {result && (
+                        <div className={styles.result}>
+                            <h2>Result:</h2>
+                            <pre>{JSON.stringify(result, null, 2)}</pre>
+                        </div>
+                    )}
+
+                    {error && (
+                        <div className={styles.error}>
+                            <h2>Error:</h2>
+                            <p>{error}</p>
+                        </div>
+                    )}
+                </div>
+
+                <div className={styles.grid}>
 
                     <a href="/api?date=2023-07-22&from_currency=aed&to_currency=inr" className={styles.card}>
                         <h2>Example 1 &rarr;</h2>

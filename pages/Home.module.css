@@ -101,3 +101,46 @@
 .logo {
     height: 1em;
 }
+
+
+.formContainer {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 3rem;
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form input,
+.form button {
+    flex: 1 0 30%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form button {
+    cursor: pointer;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+}
+
+.result,
+.error {
+    margin-top: 2rem;
+}
+
+.result pre,
+.error p {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
